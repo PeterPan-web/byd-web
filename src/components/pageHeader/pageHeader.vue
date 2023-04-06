@@ -11,7 +11,12 @@
         src="@/assets/0_common/logo.png"
         alt=""
       />
-      <img v-else src="@/assets/0_common/logo_else.png" @click="goPage('Home','/','1')" alt="" />
+      <img
+        v-else
+        src="@/assets/0_common/3.jpg"
+        @click="goPage('Home', '/', '1')"
+        alt=""
+      />
       <div class="navlist">
         <div
           class="nav"
@@ -26,14 +31,14 @@
           ></div>
         </div>
       </div>
-    </header>    
+    </header>
   </div>
 </template>
 
 <script>
 export default {
   name: "pageHeader",
-  data() {
+  data () {
     return {
       navlist: [
         {
@@ -78,51 +83,51 @@ export default {
           url: "/contact",
           index: 7,
         },
-      ],      
+      ],
       page_now: 1, //当前页面，默认为1首页
-    };
+    }
   },
   props: ['isScroll'],
   components: {},
   created () {
   },
-  mounted() {
+  mounted () {
     var path_arr = window.location.href.split('/')
     var path_length = path_arr.length
-    var path = '/' + path_arr[path_length-1]    
-    for (var i of this.navlist){
+    var path = '/' + path_arr[path_length - 1]
+    for (var i of this.navlist) {
       if (i.url == path) {
         this.page_now = i.index
         return
       }
-    }    
+    }
   },
   methods: {
-    goPage(name, url, index) {
-      this.page_now = index;
+    goPage (name, url, index) {
+      this.page_now = index
       this.$router.push({
         name: name,
         params: {
           navIndex: index,
         },
-      });
+      })
     },
-    goPage_News(item){
+    goPage_News (item) {
       this.$router.push({
         name: item.name,
         params: {
           newsDetail: item.item
         },
-      });
+      })
     },
-    goPage_Estate(item){
+    goPage_Estate (item) {
       this.$router.push({
         name: item.name,
         params: {
           navIndex: item.index,
           selectIndex: item.selectIndex
         },
-      });
+      })
     }
   },
 };

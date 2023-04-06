@@ -70,7 +70,7 @@ export default {
           children: [],
         },
         {
-          title: "走进大稻",
+          title: "产品1",
           name: "About_m",
           url: "/about_m",
           index: 2,
@@ -90,7 +90,7 @@ export default {
           ],
         },
         {
-          title: "大稻产业",
+          title: "产品21",
           name: "Estate_m",
           url: "/estate_m",
           index: 3,
